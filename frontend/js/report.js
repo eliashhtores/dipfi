@@ -1,10 +1,10 @@
 loadEventListeners();
-const validSession = getSessionData();
-let id;
+// const validSession = getSessionData();
+// let id;
 
-if (validSession) {
-    id = session[0].user.id;
-}
+// if (validSession) {
+//     id = session[0].user.id;
+// }
 
 document.addEventListener("DOMContentLoaded", () => {
     loadSubjects('first');
