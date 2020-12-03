@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Semestral</title>
+    <link id="sleek-css" rel="stylesheet" href="assets/css/style.css" />
+    <link href="css/toastr.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="logo"></header>
+
+    <div class="container">
+
+        <!-- General Data -->
+        <div>
+            <div class="card card-body py-2">
+                <h3 class="text-center">INFORME SEMESTRAL DOCTORADO</h3>
+                <p>DATOS GENERALES</p>
+                <form>
+                    <div class="form-group form-row">
+                        <div class="col">
+                            <small class="form-text text-muted">Apellidos</small>
+                            <input type="text" class="form-control" required id="lastName" name="lastName">
+                        </div>
+                        <div class="col">
+                            <small class="form-text text-muted">Nombre</small>
+                            <input type="text" class="form-control" required id="firstName" name="firstName">
+                        </div>
+                    </div>
+                    <strong>Dirección en Querétaro</strong>
+                    <div class="form-group form-row">
+                        <div class="col">
+                            <small class="form-text text-muted">Calle</small>
+                            <input type="text" class="form-control" required id="address1" name="address1">
+                        </div>
+                        <div class="col">
+                            <small class="form-text text-muted">No. Ext.</small>
+                            <input type="text" class="form-control" required id="street_num" name="street_num">
+                        </div>
+                        <div class="col">
+                            <small class="form-text text-muted">No. Int.</small>
+                            <input type="text" class="form-control" id="apartment_num" name="apartment_num">
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <div class="col">
+                            <small class="form-text text-muted">Colonia</small>
+                            <input type="text" class="form-control" required id="address2" name="address2">
+                        </div>
+                        <div class="col">
+                            <small class="form-text text-muted">Código Postal</small>
+                            <input type="text" class="form-control" required id="zipCode" name="zipCode">
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <div class="col">
+                            <small class="form-text text-muted">Ciudad</small>
+                            <input type="text" class="form-control" required id="city" name="city">
+                        </div>
+                        <div class="col">
+                            <small class="form-text text-muted">Número de semestres inscrito en el Doctorado</small>
+                            <input type="number" class="form-control" required max="6" min="1" id="semester"
+                                name="semester">
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <div class="col">
+                            <small class="form-text text-muted">Teléfono de casa</small>
+                            <input type="text" class="form-control" id="phone" name="phone">
+                        </div>
+                        <div class="col">
+                            <small class="form-text text-muted">Celular</small>
+                            <input type="text" class="form-control" required id="cellphone" name="cellphone">
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <div class="col">
+                            <small class="form-text text-muted">Lugar de trabajo en la FI</small>
+                            <input type="text" class="form-control" required id="workplace" name="workplace">
+                        </div>
+                        <div class="col">
+                            <small class="form-text text-muted">Becario Conacyt</small>
+                            <select class="form-control" id="scholarshipHolder" name="scholarshipHolder">
+                                <option value="1">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <div class="col">
+                            <small class="form-text text-muted">País</small>
+                            <select id="country" name="country" class="form-control" required>
+                                <option value="">Elegir opción</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <small class="form-text text-muted">Originario del Estado</small>
+                            <select id="state" name="state" class="form-control" disabled>
+                                <option value="">Elegir opción</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <input type="submit" value="Guardar" class="btn btn-danger btn-block btn-lg">
+                    <button class="btn btn-danger btn-block btn-lg" id="exit">Salir</button>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/toastr.min.js"></script>
+    <script src="js/general_data.js"></script>
+
+</body>
+
+</html>
