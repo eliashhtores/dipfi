@@ -1,4 +1,4 @@
-const env = "localhost:3000";
+const env = "http://localhost:3000";
 
 let session = {};
 

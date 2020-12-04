@@ -1,6 +1,19 @@
 const express = require('express')
 const User = require('../models/user')
+const bodyParser = require('body-parser');
 const router = express.Router()
+
+router.use(bodyParser.urlencoded({
+    extended: false
+}));
+router.use(bodyParser.json())
+
+router.all('*', function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
 
 // Get all users
 router.get('/', async (req, res) => {
