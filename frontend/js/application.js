@@ -1,4 +1,4 @@
-const env = "http://127.0.0.1/dipfi/public/api";
+const env = "localhost:3000";
 
 let session = {};
 

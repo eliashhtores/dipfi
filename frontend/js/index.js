@@ -30,23 +30,26 @@ function redirect() {
     window.location.replace("general_data.html");
 }
 
-document.querySelector('#login').addEventListener('click', function (e) {
-    const username = document.querySelector('#username').value;
-    const password = document.querySelector('#password').value;
-    const url = `${env}/login`;
+document.querySelector('#login').addEventListener('click', (e) => {
+    const username = document.querySelector('#username');
+    const password = document.querySelector('#password');
+    const url = `${env}/users/checkUser`;
     const data = {
-        "username": username,
-        "password": password
+        "username": username.value,
+        "password": password.value
     };
     const ui = new UI();
 
-    if (username !== '' && password !== '') {
+    if (username.value !== '' && password.value !== '') {
         $.ajax({
             url: url,
+            headers: {
+                'Content-Type': 'application/json'
+            },
             method: "POST",
             data: data,
             dataType: "json",
-            success: function (response) {
+            success: (response) => {
                 if (response.status === 401) {
                     ui.showAlert('¡Error! Favor de verificar su usuario, contraseña y que su cuenta esté activa en el sistema', 'alert alert-danger alert-dismissible');
                 } else {
@@ -54,7 +57,7 @@ document.querySelector('#login').addEventListener('click', function (e) {
                     redirect();
                 }
             },
-            error: function (err) {
+            error: (err) => {
                 console.log(err.responseText);
             }
         });
