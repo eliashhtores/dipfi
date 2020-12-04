@@ -31,7 +31,7 @@ router.post('/checkUser', async (req, res) => {
                 message: "The username does not exist"
             }))
         }
-        if (!bcrypt.compareSync(req.body.password, user.password)) {
+        if (!user.comparePassword(req.body.password)) {
             return res.status(400).json(({
                 message: "The password is invalid"
             }))
