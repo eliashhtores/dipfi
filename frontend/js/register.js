@@ -31,7 +31,7 @@ function redirect() {
 }
 
 document.querySelector('#register').addEventListener('click', function (e) {
-    const name = document.querySelector('#name').value;
+    const username = document.querySelector('#username').value;
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
     const confirm_password = document.querySelector('#confirm_password').value;
@@ -39,14 +39,14 @@ document.querySelector('#register').addEventListener('click', function (e) {
 
     const url = `${env}/register`;
     const data = {
-        name,
+        username,
         email,
         password,
         confirm_password
     };
     const ui = new UI();
 
-    if (name !== '' && email !== '' && password !== '' && confirm_password !== '') {
+    if (username !== '' && email !== '' && password !== '' && confirm_password !== '') {
         $.ajax({
             url: url,
             method: "POST",

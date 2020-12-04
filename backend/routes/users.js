@@ -1,7 +1,6 @@
 const express = require('express')
 const User = require('../models/user')
 const router = express.Router()
-const bcrypt = require('bcrypt')
 
 // Get all users
 router.get('/', async (req, res) => {
@@ -62,6 +61,23 @@ router.post('/', async (req, res) => {
         })
     }
 })
+
+// Create user detail
+// router.post('/userDetail', async (req, res) => {
+//     const user = await User.findOne({
+//         username: req.body.username
+//     }).exec()
+//     try {
+//         user.userDetails.push({
+
+//         })
+//         res.status(200)
+//     } catch (error) {
+//         res.status(400).json({
+//             message: error.message,
+//         })
+//     }
+// })
 
 // Update user
 router.patch('/:id', getUser, async (req, res) => {

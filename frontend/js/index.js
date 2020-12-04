@@ -31,16 +31,16 @@ function redirect() {
 }
 
 document.querySelector('#login').addEventListener('click', function (e) {
-    const name = document.querySelector('#name').value;
+    const username = document.querySelector('#username').value;
     const password = document.querySelector('#password').value;
     const url = `${env}/login`;
     const data = {
-        "name": name,
+        "username": username,
         "password": password
     };
     const ui = new UI();
 
-    if (name !== '' && password !== '') {
+    if (username !== '' && password !== '') {
         $.ajax({
             url: url,
             method: "POST",
